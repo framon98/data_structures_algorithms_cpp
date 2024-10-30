@@ -9,10 +9,10 @@ int main(){
 
     cout<<a[0]<<" "<<a[4]<<endl; */
 
-    int a[4] = {1, 2, 3, 4}; /// Initializing the array
+    int a[10] = {1, 2, 3, 4}; /// Initializing the array
     // cout<<a[0]<<a[1]<<a[2]<<a[3]<<endl; /// Printing the values of the array
 
-    for(int idxi = 0; idxi < 4; idxi++){ /// More efficient way of printing the array
+    for(int idxi = 0; idxi < 10; idxi++){ /// More efficient way of printing the array
         cout<<a[idxi]<<" ";
     }
 
