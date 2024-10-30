@@ -22,8 +22,14 @@ int main(){
    
     int arr[ARRAY_SIZE];
     for(int idxi = 0; idxi < 10; idxi++){
+        arr[idxi] = idxi * idxi;
         std::cout<<arr[idxi]<<" ";
     }
+
+    std::cout<<std::endl;
+
+    int arrb;
+    std::cout<<sizeof(arrb)<<std::endl;
 
     return 0;
 }
