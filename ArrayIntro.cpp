@@ -21,15 +21,19 @@ int main(){
 */
    
     int arr[ARRAY_SIZE];
-    for(int idxi = 0; idxi < 10; idxi++){
+    for (int idxi = 0; idxi < 10; idxi++){
         arr[idxi] = idxi * idxi;
-        std::cout<<arr[idxi]<<" ";
+        std::cout << arr[idxi] << " ";
     }
 
-    std::cout<<std::endl;
+    std::cout << std::endl;
 
-    int arrb;
-    std::cout<<sizeof(arrb)<<std::endl;
+    // int arrb;
+    // std::cout<<sizeof(arrb)<<std::endl;
+
+    int arrd[10] = {1, 2, 3};
+    std::cout << sizeof(arrd); // sizeof gives the bytes size of the space
+
 
     return 0;
 }
