@@ -15,6 +15,7 @@ int main(){
     // num_b = temp;
 
     // If we use an xor or ^ we can do a swap with no temp variable
+    // This is a bitwise operator
     // num_a = num_a ^ num_b;
     // num_b = num_a ^ num_b;
     // num_a = num_a ^ num_b;
