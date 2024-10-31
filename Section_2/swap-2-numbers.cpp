@@ -9,6 +9,7 @@ int main(){
     std::cout << "a = " << num_a << std::endl;
     std::cout << "b = " << num_b << std::endl;
 
+    //Using a temp variable is one way to do a number swap
     int temp = num_a;
     num_a = num_b;
     num_b = temp;
