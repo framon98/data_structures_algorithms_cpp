@@ -1,8 +1,10 @@
 #include <iostream>
 
 int main(){
-    int arr[1000000];
+    int arr[100];
 
-    
+    std::cout << arr[200];
+
+
     return 0;
 }
