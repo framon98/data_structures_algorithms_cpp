@@ -18,7 +18,7 @@ int main(){
     name[4] = 'x'; */
     std::cout << "Your name is: " << name << std::endl;
 
-    std::cout << "Length is:" << length(name);
+    // std::cout << "Length is:" << length(name);
 
     return 0;
 }
