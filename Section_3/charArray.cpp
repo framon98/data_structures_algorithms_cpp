@@ -12,7 +12,8 @@ int main(){
 
     char name[100];
     std::cout << "Enter your name: ";
-    std::cin >> name;
+    // std::cin >> name;
+    std::cin.getline(name,100, 'o');
 /*     name[1] = '\0';
     name[3] = 'd';
     name[4] = 'x'; */
