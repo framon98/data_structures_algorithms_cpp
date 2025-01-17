@@ -20,6 +20,8 @@ class LinkedList {
     public:
         LinkedList(int value){
             Node* newNode = new Node(value);
-            
+            head = newNode;
+            tail = newNode;
+            length = 1;
         }
 };
