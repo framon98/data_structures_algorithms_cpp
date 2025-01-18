@@ -53,19 +53,20 @@ class LinkedList {
                 return;
             }
             Node* temp = head;
-            Node* pre = head;
-            while (temp->next){
-                pre = temp;
-                temp = temp->next;
-            }
-            tail = pre;
-            tail->next = nullptr;
-            length--;
-            if (length == 0){
+            if (length == 1){
                 head = nullptr;
                 tail = nullptr;
-            }
+            }else{
+                Node* pre = head;
+                while (temp->next){
+                    pre = temp;
+                    temp = temp->next;
+                }
+                tail = pre;
+                tail->next = nullptr;
+            }            
             delete temp;
+            length--;
         }
 
         void printList(){
