@@ -37,9 +37,16 @@ class LinkedList {
 
         void append(int value){
             Node* newNode = new Node(value);
-            tail->next = newNode;
-            tail = newNode;
-            length += 1;
+            if (head == nullptr){
+                head = newNode;
+                tail = newNode;
+            }else{
+
+                tail->next = newNode;
+                tail = newNode;
+            }
+            length++;
+
         }
 
         void printList(){
