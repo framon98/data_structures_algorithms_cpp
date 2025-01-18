@@ -71,20 +71,9 @@ class LinkedList {
 };
 
 int main(){
-    LinkedList* myLinkedList = new LinkedList(4);
+    LinkedList* myLinkedList = new LinkedList(1);
 
-    myLinkedList->getHead();
-    myLinkedList->getTail();
-    myLinkedList->getLength();
-
-    myLinkedList->printList();
-
-    myLinkedList->append(5);
-    myLinkedList->append(8);
-
-    myLinkedList->getHead();
-    myLinkedList->getTail();
-    myLinkedList->getLength();
+    myLinkedList->append(2);
 
     myLinkedList->printList();
 
