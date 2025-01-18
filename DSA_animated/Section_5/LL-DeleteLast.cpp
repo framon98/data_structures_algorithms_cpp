@@ -46,7 +46,26 @@ class LinkedList {
                 tail = newNode;
             }
             length++;
+        }
 
+        void deleteLast(){
+            if (tail == nullptr){
+                return;
+            }
+            Node* temp = head;
+            Node* pre = head;
+            while (temp->next){
+                pre = temp;
+                temp = temp->next;
+            }
+            tail = pre;
+            tail->next = nullptr;
+            length--;
+            if (length == 0){
+                head = nullptr;
+                tail = nullptr;
+            }
+            delete temp;
         }
 
         void printList(){
@@ -72,11 +91,22 @@ class LinkedList {
 
 int main(){
     LinkedList* myLinkedList = new LinkedList(1);
-
     myLinkedList->append(2);
 
+    std::cout << "LL before deleteLast():\n";
     myLinkedList->printList();
 
+    myLinkedList->deleteLast();
+    std::cout << "\n\nLL after first deleteLast():\n";
+    myLinkedList->printList();
+
+    myLinkedList->deleteLast();
+    std::cout << "\n\nLL after second deleteLast():\n";
+    myLinkedList->printList();
+    
+    myLinkedList->deleteLast();
+    std::cout << "\n\nLL after third deleteLast():\n";
+    myLinkedList->printList();
 
     delete myLinkedList;
 }
