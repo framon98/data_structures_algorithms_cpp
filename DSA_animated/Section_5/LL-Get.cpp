@@ -134,7 +134,7 @@ int main(){
     myLinkedList->append(2);
     myLinkedList->append(3);
 
-    std::cout << myLinkedList->get(2);
+    std::cout << myLinkedList->get(2)->value;
 
 
 }
