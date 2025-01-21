@@ -69,6 +69,19 @@ class LinkedList {
             length--;
         }
 
+        void prepend(int value){
+            Node* newNode = new Node(value);
+
+            if (head == nullptr){
+                head = newNode;
+                tail = newNode;
+            }else{
+                newNode->next = head;
+                head = newNode;
+            }
+            length++;
+        }
+
         void printList(){
             Node* temp = head;
             while (temp != nullptr) {
@@ -91,5 +104,14 @@ class LinkedList {
 };
 
 int main(){
+
+    LinkedList* myLinkedList = new LinkedList(2);
+    myLinkedList->append(3);
+
+    myLinkedList->prepend(1);
     
+
+    myLinkedList->printList();
+
+
 }
