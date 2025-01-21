@@ -69,6 +69,19 @@ class LinkedList {
             length--;
         }
 
+        void deleteFirst(){
+            if (head == nullptr) return;
+            Node* temp = head;
+            if (length == 1){
+                head = nullptr;
+                tail = nullptr;
+            }else{
+                head = head->next;
+            }
+            delete temp;
+            length--;
+        }
+
         void prepend(int value){
             Node* newNode = new Node(value);
 
@@ -106,7 +119,21 @@ class LinkedList {
 int main(){
 
     LinkedList* myLinkedList = new LinkedList(2);
+    myLinkedList->append(1);
 
+    std::cout << "LL before deleteFirst():\n";
+    myLinkedList->printList();
 
+    myLinkedList->deleteFirst();
+    std::cout << "\n\nLL after first deleteFirst():\n";
+    myLinkedList->printList();
+
+    myLinkedList->deleteFirst();
+    std::cout << "\n\nLL after second deleteFirst():\n";
+    myLinkedList->printList();
+    
+    myLinkedList->deleteFirst();
+    std::cout << "\n\nLL after third deleteFirst():\n";
+    myLinkedList->printList();
 
 }
