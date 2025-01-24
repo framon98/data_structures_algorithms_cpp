@@ -157,6 +157,22 @@ class LinkedList {
 
         }
 
+        void reverse(){
+            Node* temp = head;
+            head = tail;
+            tail = temp;
+            Node* after = temp->next;
+            Node* before = nullptr;
+
+            for (int idxi = 0; idxi < length; idxi++){
+                after = temp->next;
+                temp->next = before;
+                before = temp;
+                temp = after;
+            }
+
+        }
+
         void getHead(){
             std::cout << "Head: " << head->value << std::endl;
         }
@@ -176,28 +192,11 @@ int main(){
     myLinkedList->append(2);
     myLinkedList->append(3);
     myLinkedList->append(4);
-    myLinkedList->append(5);
-
-    myLinkedList->printList();
-
-    myLinkedList->deleteNode(2);
-    std::cout << "\nLL after deleteNode() in middle:\n";
-    myLinkedList->printList();
-
-
-    myLinkedList->deleteNode(0);
-    std::cout << "\nLL after deleteNode() of first node:\n";
-    myLinkedList->printList();
-
-    myLinkedList->deleteNode(2);
-    std::cout << "\nLL after deleteNode() of last node:\n";
-    myLinkedList->printList();
-
-
-    // myLinkedList->set(1, 4);
-    // myLinkedList->insert(1, 1);
+    // myLinkedList->append(5);
 
     // myLinkedList->printList();
 
+    myLinkedList->reverse();
 
+    myLinkedList->printList();
 }
