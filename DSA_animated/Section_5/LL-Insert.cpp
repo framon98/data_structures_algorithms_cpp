@@ -116,15 +116,32 @@ class LinkedList {
 
         bool set(int index, int value){ 
         // it is a boolean to know if it was possible
-        // to add a value
+        // to add a value to an index
             Node* temp = get(index);
             if (temp){
                 temp->value = value;
                 return true;
             }
             return false;
+        }
 
-
+        bool insert(int index, int value){
+            // this adds a node to the linked list
+            if (index < 0 || index > length) return false;
+            if (index == 0){
+                prepend(value);
+                return true;
+            }
+            if (index == length){
+                append(value);
+                return true;
+            }
+            Node*  newNode = new Node(value);
+            Node* temp = get(index - 1);
+            newNode->next = temp->next;
+            temp->next = newNode;
+            length++;
+            return true;
         }
 
         void getHead(){
