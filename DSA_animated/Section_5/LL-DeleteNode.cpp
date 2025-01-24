@@ -144,6 +144,11 @@ class LinkedList {
             return true;
         }
 
+        void deleteNode(int index){
+            if (index < 0 || index >= length) return;
+            
+        }
+
         void getHead(){
             std::cout << "Head: " << head->value << std::endl;
         }
