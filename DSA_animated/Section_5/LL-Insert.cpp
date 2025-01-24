@@ -159,12 +159,13 @@ class LinkedList {
 
 int main(){
 
-    LinkedList* myLinkedList = new LinkedList(11);
-    myLinkedList->append(3);
-    myLinkedList->append(23);
-    myLinkedList->append(7);
+    LinkedList* myLinkedList = new LinkedList(0);
+    myLinkedList->append(2);
+    // myLinkedList->append(23);
+    // myLinkedList->append(7);
 
-    myLinkedList->set(1, 4);
+    // myLinkedList->set(1, 4);
+    myLinkedList->insert(1, 1);
 
     myLinkedList->printList();
 
