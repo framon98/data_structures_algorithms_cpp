@@ -172,15 +172,32 @@ class LinkedList {
 
 int main(){
 
-    LinkedList* myLinkedList = new LinkedList(0);
+    LinkedList* myLinkedList = new LinkedList(1);
     myLinkedList->append(2);
-    // myLinkedList->append(23);
-    // myLinkedList->append(7);
-
-    // myLinkedList->set(1, 4);
-    myLinkedList->insert(1, 1);
+    myLinkedList->append(3);
+    myLinkedList->append(4);
+    myLinkedList->append(5);
 
     myLinkedList->printList();
+
+    myLinkedList->deleteNode(2);
+    std::cout << "\nLL after deleteNode() in middle:\n";
+    myLinkedList->printList();
+
+
+    myLinkedList->deleteNode(0);
+    std::cout << "\nLL after deleteNode() of first node:\n";
+    myLinkedList->printList();
+
+    myLinkedList->deleteNode(2);
+    std::cout << "\nLL after deleteNode() of last node:\n";
+    myLinkedList->printList();
+
+
+    // myLinkedList->set(1, 4);
+    // myLinkedList->insert(1, 1);
+
+    // myLinkedList->printList();
 
 
 }
