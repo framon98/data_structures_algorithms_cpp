@@ -114,6 +114,19 @@ class LinkedList {
             return temp;
         }
 
+        bool set(int index, int value){ 
+        // it is a boolean to know if it was possible
+        // to add a value
+            Node* temp = get(index);
+            if (temp){
+                temp->value = value;
+                return true;
+            }
+            return false;
+
+
+        }
+
         void getHead(){
             std::cout << "Head: " << head->value << std::endl;
         }
@@ -129,12 +142,14 @@ class LinkedList {
 
 int main(){
 
-    LinkedList* myLinkedList = new LinkedList(0);
-    myLinkedList->append(1);
-    myLinkedList->append(2);
+    LinkedList* myLinkedList = new LinkedList(11);
     myLinkedList->append(3);
+    myLinkedList->append(23);
+    myLinkedList->append(7);
 
-    std::cout << myLinkedList->get(2)->value;
+    myLinkedList->set(1, 4);
+
+    myLinkedList->printList();
 
 
 }
