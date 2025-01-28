@@ -119,6 +119,37 @@ class LinkedList {
         //   | - Return 'slow' as the middle node                   |
         //   +======================================================+
 
+        bool hasLoop(){
+            Node* slow = head;
+            Node* fast = head;
+            
+            // for (int idx = 0; idx < length; idx++){
+                
+            // }
+            // if (head == nullptr) return false;
+            while (fast != nullptr && fast->next != nullptr){
+                slow = slow->next;
+                fast = fast->next->next;
+                if (slow == fast) return true;
+            }
+            return false;
+            
+        }
+
+        //   +======================================================+
+        //   |                 WRITE YOUR CODE HERE                 |
+        //   | Description:                                         |
+        //   | - Check if the linked list has a loop                |
+        //   | - Return type: bool                                  |
+        //   |                                                      |
+        //   | Tips:                                                |
+        //   | - Use two pointers: 'slow' and 'fast'                |
+        //   | - 'slow' moves one step, 'fast' moves two            |
+        //   | - If they meet, a loop exists                        |
+        //   | - Return true if loop found, false otherwise         |
+        //   | - 'fast' checks for null and its 'next' for null     |
+        //   +======================================================+
+
 };
 
 
