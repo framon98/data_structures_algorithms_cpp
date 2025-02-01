@@ -84,21 +84,20 @@ class LinkedList {
         
         void removeDuplicates(){
             if (head == nullptr) return;
+            unordered_set<int> values;
             
+            Node* previous = nullptr;
             Node* current = head;
-            Node* runner = current->next;
             
-            // Node* prev = head;
-            // Node* temp = prev->next;
-            
-            while (current->next != nullptr){
-                if (current->value == runner->value){
-                    current->next = runner->next;
-                    delete runner;
+            while (current != nullptr){
+                if (values.count(current->value)){
+                    previous->next = current->next;
                     length--;
+                }else{
+                    values.insert(current->value);
+                    previous = current;
                 }
                 current = current->next;
-                runner = current->next;
             }
             
         }
