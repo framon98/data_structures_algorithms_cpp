@@ -51,4 +51,7 @@ class DoublyLinkedList {
         }
 };
 
-DoublyLinkedList* myDLL = new DoublyLinkedList(7);
+int main(){
+    DoublyLinkedList* myDLL = new DoublyLinkedList(7);
+    myDLL->printList();
+}
