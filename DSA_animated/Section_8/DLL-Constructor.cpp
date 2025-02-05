@@ -25,6 +25,17 @@ class DoublyLinkedList {
             head = newNode;
             tail = newNode;
             length = 1;
-            
+
         }
-}
+
+        void printList(){
+            Node* temp = head;
+            while (temp)
+            {
+                std::cout << temp->value << std::endl;
+                temp = temp->next;
+            }
+        }
+};
+
+DoublyLinkedList* myDLL = new DoublyLinkedList(7);
