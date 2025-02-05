@@ -36,6 +36,19 @@ class DoublyLinkedList {
                 temp = temp->next;
             }
         }
+
+        void getHead(){
+            std::cout << "Head: " << head->value << std::endl;
+        }
+
+        
+        void getTail(){
+            std::cout << "Tail: " << tail->value << std::endl;
+        }
+
+        void getLength() {
+            std::cout << "Length: " << length << std::endl;
+        }
 };
 
 DoublyLinkedList* myDLL = new DoublyLinkedList(7);
