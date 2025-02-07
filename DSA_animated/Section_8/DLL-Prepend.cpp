@@ -76,19 +76,32 @@ class DoublyLinkedList {
             delete temp;   
             length--; 
         }
+
+        void prepend(int value){
+            Node* newNode = new Node(value);
+            if (length == 0){
+                head = newNode;
+                tail = newNode;
+            }else{
+                head->prev = newNode;
+                newNode->next = head;
+                head = newNode;
+            }
+            length++;
+        }
 };
 
 int main(){
-    DoublyLinkedList* myDLL = new DoublyLinkedList(1);
+    DoublyLinkedList* myDLL = new DoublyLinkedList(2);
     // myDLL->printList();
-    myDLL->append(2);
+    myDLL->append(3);
     std::cout << "DLL before deleteLast 1" << std::endl;
     myDLL->printList();
-    myDLL->deleteLast();
-    std::cout << "DLL after deleteLast 1" << std::endl;
+    myDLL->prepend(1);
+    std::cout << "DLL after prepend" << std::endl;
     myDLL->printList();
-    myDLL->deleteLast();
-    std::cout << "DLL after deleteLast 2" << std::endl;
-    myDLL->printList();
+    // myDLL->deleteLast();
+    // std::cout << "DLL after deleteLast 2" << std::endl;
+    // myDLL->printList();
 
 }
