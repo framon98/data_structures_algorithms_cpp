@@ -8,8 +8,8 @@ class Node {
 
         Node(int value){
             this->value = value;
-            next = nullptr;
-            prev = nullptr;
+            this->next = nullptr;
+            this->prev = nullptr;
         }
 };
 
@@ -30,7 +30,7 @@ class DoublyLinkedList {
 
         void printList(){
             Node* temp = head;
-            while (temp)
+            while (temp != nullptr)
             {
                 std::cout << temp->value << std::endl;
                 temp = temp->next;
@@ -52,7 +52,7 @@ class DoublyLinkedList {
 
         void append(int value){
             Node* newNode = new Node(value);
-            if (length = 0){
+            if (length == 0){
                 head = newNode;
                 tail = newNode;
             }else{
@@ -62,12 +62,33 @@ class DoublyLinkedList {
             }
             length++;
         }
+
+        void deleteLast() {
+            if (length == 0) return;
+            Node* temp = tail;
+            if (length == 1){
+                head = nullptr;
+                tail = nullptr;
+            }else{
+                tail = tail->prev;
+                tail->next = nullptr;
+            }
+            delete temp;   
+            length--; 
+        }
 };
 
 int main(){
     DoublyLinkedList* myDLL = new DoublyLinkedList(1);
-    myDLL->printList();
+    // myDLL->printList();
     myDLL->append(2);
+    std::cout << "DLL before deleteLast 1" << std::endl;
+    myDLL->printList();
+    myDLL->deleteLast();
+    std::cout << "DLL after deleteLast 1" << std::endl;
+    myDLL->printList();
+    myDLL->deleteLast();
+    std::cout << "DLL after deleteLast 2" << std::endl;
     myDLL->printList();
 
 }
