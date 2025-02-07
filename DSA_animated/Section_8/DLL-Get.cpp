@@ -103,6 +103,17 @@ class DoublyLinkedList {
             delete temp;
             length--; 
         }
+
+        Node* get(int index){
+            if (index < 0 || index >= length){
+                return nullptr;
+            }
+            Node* temp = head;
+            for (int idx = 0; idx < index; idx++){
+                temp = temp->next;
+            }
+            return temp;
+        }
 };
 
 int main(){
