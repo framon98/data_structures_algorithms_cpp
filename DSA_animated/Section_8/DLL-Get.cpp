@@ -105,28 +105,39 @@ class DoublyLinkedList {
         }
 
         Node* get(int index){
-            if (index < 0 || index >= length){
-                return nullptr;
-            }
+            if (index < 0 || index >= length) return nullptr;
             Node* temp = head;
-            for (int idx = 0; idx < index; idx++){
-                temp = temp->next;
+            if (index < length/2){
+                for (int idx = 0; idx < index; idx++){
+                    temp = temp->next;
+                }
+            }else{
+                temp = tail;
+                for (int idx = length -1 ; idx > index; idx--){
+                    temp = temp->prev;
+                }
             }
             return temp;
         }
 };
 
 int main(){
-    DoublyLinkedList* myDLL = new DoublyLinkedList(2);
+    DoublyLinkedList* myDLL = new DoublyLinkedList(0);
     myDLL->append(1);
-    std::cout << "DLL before deleteFirst 1" << std::endl;
-    myDLL->printList();
-    myDLL->deleteFirst();
-    std::cout << "DLL after deleteFirst" << std::endl;
-    myDLL->printList();
-    myDLL->deleteFirst();
-    std::cout << "DLL after deleteFirst 2" << std::endl;
-    myDLL->printList();
-    myDLL->deleteLast();
+    myDLL->append(2);
+    myDLL->append(3);
+
+    std::cout << myDLL->get(1)->value << std::endl;
+    std::cout << myDLL->get(2)->value << std::endl;
+
+    // std::cout << "DLL before deleteFirst 1" << std::endl;
+    // myDLL->printList();
+    // myDLL->deleteFirst();
+    // std::cout << "DLL after deleteFirst" << std::endl;
+    // myDLL->printList();
+    // myDLL->deleteFirst();
+    // std::cout << "DLL after deleteFirst 2" << std::endl;
+    // myDLL->printList();
+    // myDLL->deleteLast();
 
 }
