@@ -155,12 +155,12 @@ class DoublyLinkedList {
 };
 
 int main(){
-    DoublyLinkedList* myDLL = new DoublyLinkedList(11);
+    DoublyLinkedList* myDLL = new DoublyLinkedList(1);
     myDLL->append(3);
-    myDLL->append(23);
+    myDLL->insert(1, 4);
     myDLL->append(7);
 
-    myDLL->set(1, 4);
+    // myDLL->set(1, 4);
 
     // std::cout << myDLL->get(1)->value << std::endl;
     // std::cout << myDLL->get(2)->value << std::endl;
