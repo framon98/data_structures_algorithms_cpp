@@ -156,29 +156,35 @@ class DoublyLinkedList {
             if (index == 0) return deleteFirst();
             if (index == length -1) return deleteLast();
 
+            Node* temp = get(index);
+
+            temp->next->prev = temp->prev;
+            temp->prev->next = temp->next;
+            delete temp;
             length--;
         }
 };
 
 int main(){
     DoublyLinkedList* myDLL = new DoublyLinkedList(1);
+    myDLL->append(2);
     myDLL->append(3);
-    myDLL->insert(1, 4);
-    myDLL->append(7);
+    myDLL->append(4);
+    myDLL->append(5);
 
     // myDLL->set(1, 4);
 
     // std::cout << myDLL->get(1)->value << std::endl;
     // std::cout << myDLL->get(2)->value << std::endl;
 
-    // std::cout << "DLL before deleteFirst 1" << std::endl;
+    std::cout << "DLL before delete Node 1" << std::endl;
     myDLL->printList();
-    // myDLL->deleteFirst();
-    // std::cout << "DLL after deleteFirst" << std::endl;
-    // myDLL->printList();
-    // myDLL->deleteFirst();
-    // std::cout << "DLL after deleteFirst 2" << std::endl;
-    // myDLL->printList();
-    // myDLL->deleteLast();
-
+    myDLL->deleteNode(2);
+    std::cout << "DLL after delete node 2" << std::endl;
+    myDLL->printList();
+    myDLL->deleteNode(0);
+    std::cout << "DLL after delete first node" << std::endl;
+    myDLL->printList();
+    myDLL->deleteNode(2);
+    myDLL->printList();
 }
