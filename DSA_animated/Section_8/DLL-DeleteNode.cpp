@@ -149,8 +149,14 @@ class DoublyLinkedList {
             after->prev = newNode;
             length++;
             return true;
+        }
 
+        void deleteNode(int index){
+            if (index < 0 || index >= length) return;
+            if (index == 0) return deleteFirst();
+            if (index == length -1) return deleteLast();
 
+            length--;
         }
 };
 
