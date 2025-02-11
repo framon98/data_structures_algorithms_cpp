@@ -81,9 +81,9 @@ class LinkedList {
 
         void partitionList(int x){
             if (head == nullptr) return;
-            Node* dummy1 = new Node(0);
+            Node* dummy1 = new Node(0); //this gets connected to the list with prev once and then it traverses without it
             Node* dummy2 = new Node(0);
-            Node* prev1 = dummy1;
+            Node* prev1 = dummy1; // this moves only from current onwards using the pointer
             Node* prev2 = dummy2;
             
             Node* curr = head;
