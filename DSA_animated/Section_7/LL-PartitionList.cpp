@@ -1,7 +1,5 @@
 #include <iostream>
 
-using namespace std;
-
 class Node {
     public:
         int value;
@@ -36,17 +34,17 @@ class LinkedList {
         void printList() {
             Node* temp = head;
             if (temp == nullptr) {
-                cout << "empty";
+                std::cout << "empty";
             } else {
                 while (temp != nullptr) {
-                    cout << temp->value;
+                    std::cout << temp->value;
                     temp = temp->next;
                     if (temp != nullptr) {
-                        cout << " -> ";
+                        std::cout << " -> ";
                     }
                 }
             }
-            cout << endl;
+            std::cout << std::endl;
         }
 
         Node* getHead() {
@@ -81,28 +79,52 @@ class LinkedList {
             length++;
         }
         
+        // void partitionList(int x){
+        //     Node* dummy1(0);
+        //     Node* dummy2(0);
+        //     Node* prev1 = dummy1;
+        //     Node* prev2 = dummy2;
+        //     Node* current = head;
+            
+        //     if (head == nullptr) return;
+        //     while (current != nullptr){
+        //         if (current->value < x){
+        //             prev1->next = current;
+        //             prev1 = current;
+        //         }else if (current->value <= x){
+        //             prev2->next = current;
+        //             prev2 = current;
+        //         }
+        //         current = current->next;
+        //     }
+        //     prev2->next = nullptr;
+        //     prev1->next = dummy2->next;
+        //     head = dummy1->next;
+            
+            
+        // }
+
         void partitionList(int x){
-            Node* dummy1(0);
-            Node* dummy2(0);
+            if (head == nullptr) return;
+            Node* dummy1 = new Node(0);
+            Node* dummy2 = new Node(0);
             Node* prev1 = dummy1;
             Node* prev2 = dummy2;
-            Node* current = head;
             
-            if (head == nullptr) return;
-            while (current != nullptr){
-                if (current->value < x){
-                    prev1->next = current;
-                    prev1 = current;
-                }else if (current->value <= x){
-                    prev2->next = current;
-                    prev2 = current;
+            Node* curr = head;
+            while(curr){
+                if (curr->value < x){
+                    prev1->next = curr;
+                    prev1 = curr;
+                }else if (curr->value >= x){
+                    prev2->next = curr;
+                    prev2 = curr;
                 }
-                current = current->next;
+                curr = curr->next;
             }
             prev2->next = nullptr;
             prev1->next = dummy2->next;
             head = dummy1->next;
-            
             
         }
 
@@ -123,3 +145,21 @@ class LinkedList {
         //   +======================================================+
 
 };
+
+int main(){
+
+    LinkedList myLL(1);
+    myLL.append(4);
+    myLL.append(3);
+    myLL.append(2);
+    myLL.append(5);
+    myLL.append(2);
+
+    myLL.printList();
+    std::cout << "List after partition" << std::endl;
+    myLL.partitionList(3);
+    myLL.printList();
+
+
+    return 0;
+}
