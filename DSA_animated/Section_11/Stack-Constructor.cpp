@@ -22,4 +22,25 @@ class Stack{
             top = newNode;
             height = 1;
         }
+
+        void printStack() {
+            Node* temp = top;
+            while(temp) {
+                std::cout << temp->value << std::endl;
+                temp = temp->next;
+            }
+        }
+
+        void getTop() {
+            std::cout << "Top: " << top->value << std::endl;
+        }
+
+        void getHeight() {
+            std::cout << "Height: " << height << std::endl;
+        }
 };
+
+int main(){
+
+    return 0;
+}
