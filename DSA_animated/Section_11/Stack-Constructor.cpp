@@ -42,5 +42,11 @@ class Stack{
 
 int main(){
 
+    Stack* myStack = new Stack(4);
+
+    myStack->getTop();
+    myStack->getHeight();
+    myStack->printStack();
+
     return 0;
 }
