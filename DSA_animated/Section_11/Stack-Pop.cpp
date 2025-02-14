@@ -61,14 +61,14 @@ class Stack{
 
 int main(){
 
-    Stack* myStack = new Stack(2);
+    Stack* myStack = new Stack(1);
 
-    myStack->push(1);
-    myStack->push(0);
+    std::cout << "Popped value 1 " << myStack->pop();
+    std::cout << "\n\nPopped value 2  " << myStack->pop();
 
-    myStack->getTop();
-    myStack->getHeight();
-    myStack->printStack();
+    // myStack->getTop();
+    // myStack->getHeight();
+    // myStack->printStack();
 
     return 0;
 }    
