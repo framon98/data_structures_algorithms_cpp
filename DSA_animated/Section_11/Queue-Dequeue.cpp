@@ -55,15 +55,36 @@ class Queue {
             }
             length++;
         }
+
+        int dequeue() {
+            if (length == 0) return INT_MIN;
+            Node* temp = first;
+            int dequeuedValue = first->value;
+            if (length == 1) {
+                first = nullptr;
+                last = nullptr;
+            } else {
+                first = first->next;
+            }
+            delete temp;
+            length--;
+            return dequeuedValue;
+        }
 };
 
 int main(){
-    Queue* myQueue = new Queue(1);
+    Queue* myQueue = new Queue(2);
     myQueue->printQueue();
 
-    myQueue->enqueue(2);
+    myQueue->enqueue(1);
     // myQueue->getFirst();
 
     myQueue->printQueue();
+
+    std::cout << myQueue->dequeue() << std::endl;
+
+    std::cout << myQueue->dequeue() << std::endl;
+
+    std::cout << myQueue->dequeue() << std::endl;
 
 }
