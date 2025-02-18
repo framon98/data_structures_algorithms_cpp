@@ -53,13 +53,16 @@ class Queue {
                 last->next = newNode;
                 last = newNode;
             }
+            length++;
         }
 };
 
 int main(){
-    Queue* myQueue = new Queue(7);
+    Queue* myQueue = new Queue(1);
+    myQueue->printQueue();
 
-    myQueue->getFirst();
+    myQueue->enqueue(2);
+    // myQueue->getFirst();
 
     myQueue->printQueue();
 
