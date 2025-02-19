@@ -52,7 +52,7 @@ class DoublyLinkedList {
 
         void append(int value){
             Node* newNode = new Node(value);
-            if (length = 0){
+            if (length == 0){
                 head = newNode;
                 tail = newNode;
             }else{
@@ -62,12 +62,26 @@ class DoublyLinkedList {
             }
             length++;
         }
+
+        void swapFirstLast(){
+            if (length < 2) return;
+            Node* temp = new Node(head->value);
+            head->value = tail->value;
+            tail->value = temp->value;
+        }
 };
 
 int main(){
-    DoublyLinkedList* myDLL = new DoublyLinkedList(1);
-    myDLL->printList();
+    DoublyLinkedList* myDLL = new DoublyLinkedList(5);
+    // myDLL->printList();
     myDLL->append(2);
+    myDLL->append(3);
+    myDLL->append(4);
+    myDLL->append(1);
+    std::cout << "Before Swap:" << std::endl;
+    myDLL->printList();
+    myDLL->swapFirstLast();
+    std::cout << "After Swap:" << std::endl;
     myDLL->printList();
 
 }
