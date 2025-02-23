@@ -63,6 +63,19 @@ class DoublyLinkedList {
             length++;
         }
 
+        bool isPalindrome(){
+            if (length == 0) return true;
+            if (length == 1) return true;
+            Node* front = head; 
+            Node* back = tail;
+            while (front != back){
+                if (front->value != back->value) return false;
+                front = front->next;
+                back = back->prev;
+            }
+            return true;
+        }
+
 
         //   +=====================================================+
         //   |                 WRITE YOUR CODE HERE                |
@@ -84,8 +97,14 @@ class DoublyLinkedList {
 
 int main(){
     DoublyLinkedList* myDLL = new DoublyLinkedList(1);
-    myDLL->printList();
     myDLL->append(2);
+    myDLL->append(3);
+    myDLL->append(3);
+    myDLL->append(2);
+    std::cout << "DLL (palindrome):\n";
     myDLL->printList();
+    bool result1 = myDLL->isPalindrome();
+    std::cout << "Is Palindrome: " << (result1 ? "true" : "false") << " - EXPECTED: true\n";
+    std::cout << (result1 ? "PASS\n" : "FAIL\n");
 
 }
