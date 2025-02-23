@@ -37,8 +37,9 @@ class DoublyLinkedList {
             }
         }
 
-        void getHead(){
-            std::cout << "Head: " << head->value << std::endl;
+        Node* getHead(){
+            // std::cout << "Head: " << head->value << std::endl;
+            return head;
         }
 
         
@@ -62,12 +63,49 @@ class DoublyLinkedList {
             }
             length++;
         }
+
+        void swapPairs(){
+            if (length == 0) return;
+            if (length == 1) return;
+
+            Node* temp = new Node(0);
+            Node* first = head;
+            Node* second = first->next;
+
+            while (first && first->next){
+                second = first->next;
+                temp->next = second;
+                second->prev = first->prev;
+                first->next = second->next;
+                second->next = first;
+                first->prev = second;
+
+                temp = first;
+                first = first->next;
+
+            }
+            
+            delete temp;
+
+        }
 };
 
 int main(){
     DoublyLinkedList* myDLL = new DoublyLinkedList(1);
-    myDLL->printList();
+    std::cout << "\n----- Test: Swap Pairs with Multiple Nodes -----\n";
+    // DoublyLinkedList* myDLL(1);
     myDLL->append(2);
+    myDLL->append(3);
+    myDLL->append(4);
+    std::cout << "DLL before swapping pairs:\n";
     myDLL->printList();
+    myDLL->swapPairs();
+    std::cout << "\nDLL after swapping pairs:\n";
+    myDLL->printList();
+    //cout << "PASS/FAIL test: ";
+    std::cout << (myDLL->getHead()->value == 2 && 
+             myDLL->getHead()->next->value == 1 && 
+             myDLL->getHead()->next->next->value == 4 &&
+             myDLL->getHead()->next->next->next->value == 3 ? "PASS\n" : "FAIL\n");
 
 }
