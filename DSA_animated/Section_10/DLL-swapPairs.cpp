@@ -67,15 +67,23 @@ class DoublyLinkedList {
         void swapPairs(){
             if (length == 0) return;
             if (length == 1) return;
+            // if (length == 2){
+            //     Node* temp = new Node(head->value);
+            //     head->value = tail->value;
+            //     tail->value = temp->value;
+            //     delete temp;
+            // }
 
-            Node* temp = new Node(0);
+            Node* dummy = new Node(0);
+            Node* temp = dummy;
             Node* first = head;
             Node* second = first->next;
+            dummy->prev = head;
 
             while (first && first->next){
                 second = first->next;
                 temp->next = second;
-                second->prev = first->prev;
+                second->prev = temp;
                 first->next = second->next;
                 second->next = first;
                 first->prev = second;
@@ -84,9 +92,8 @@ class DoublyLinkedList {
                 first = first->next;
 
             }
-            
+            head = dummy->prev->prev;
             delete temp;
-
         }
 };
 
@@ -97,6 +104,8 @@ int main(){
     myDLL->append(2);
     myDLL->append(3);
     myDLL->append(4);
+    myDLL->append(5);
+    myDLL->append(6);
     std::cout << "DLL before swapping pairs:\n";
     myDLL->printList();
     myDLL->swapPairs();
