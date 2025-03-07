@@ -67,12 +67,6 @@ class DoublyLinkedList {
         void swapPairs(){
             if (length == 0) return;
             if (length == 1) return;
-            // if (length == 2){
-            //     Node* temp = new Node(head->value);
-            //     head->value = tail->value;
-            //     tail->value = temp->value;
-            //     delete temp;
-            // }
 
             Node* dummy = new Node(0);
             Node* temp = dummy;
@@ -93,7 +87,7 @@ class DoublyLinkedList {
 
             }
             head = dummy->prev->prev;
-            delete temp;
+            // delete temp;
         }
 };
 
@@ -102,10 +96,10 @@ int main(){
     std::cout << "\n----- Test: Swap Pairs with Multiple Nodes -----\n";
     // DoublyLinkedList* myDLL(1);
     myDLL->append(2);
-    myDLL->append(3);
-    myDLL->append(4);
-    myDLL->append(5);
-    myDLL->append(6);
+    // myDLL->append(3);
+    // myDLL->append(4);
+    // myDLL->append(5);
+    // myDLL->append(6);
     std::cout << "DLL before swapping pairs:\n";
     myDLL->printList();
     myDLL->swapPairs();
