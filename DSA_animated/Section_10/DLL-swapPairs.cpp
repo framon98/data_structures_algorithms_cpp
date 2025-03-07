@@ -71,11 +71,10 @@ class DoublyLinkedList {
             Node* dummy = new Node(0);
             Node* temp = dummy;
             Node* first = head;
-            Node* second = first->next;
             dummy->prev = head;
 
             while (first && first->next){
-                second = first->next;
+                Node* second = first->next;
                 temp->next = second;
                 second->prev = temp;
                 first->next = second->next;
@@ -87,7 +86,6 @@ class DoublyLinkedList {
 
             }
             head = dummy->prev->prev;
-            // delete temp;
         }
 };
 
