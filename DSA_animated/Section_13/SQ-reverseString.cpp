@@ -1,4 +1,4 @@
-#include "ReverseString.h"
+#include "SQ-reverseString.h"
 
 
 string reverseString(const string& str) {
