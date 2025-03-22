@@ -37,6 +37,14 @@ class Stack {
         void push(int value) {
             stackVector.push_back(value);
         }
+
+        void pop(){
+            if (isEmpty()){
+                return;
+            }
+            stackVector.pop_back();
+        }
+
     
         //   +=====================================================+
         //   |                 WRITE YOUR CODE HERE                |
@@ -56,5 +64,24 @@ class Stack {
         //   +=====================================================+
   
 };
+
+int main(){
+
+    Stack* myStack = new Stack();
+    myStack->push(1);
+    myStack->push(0);
+    myStack->printStack();
+
+    myStack->pop();
+    myStack->pop();
+    myStack->printStack();
+
+
+    // myStack->getTop();
+    // myStack->getHeight();
+    // myStack->printStack();
+
+    return 0;
+}    
 
 
