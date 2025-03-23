@@ -2,10 +2,21 @@
 
 
 string reverseString(const string& str) {
+    stack<char> reversable;
+
+    for (int idxi = 0; idxi < int(str.length()) ; idxi ++){
+
+        reversable.push(str.at(idxi));
+    }
+
+    string reversedString;
+
+    while (!reversable.empty()){
+        reversedString.push_back(reversable.top());
+        reversable.pop();
+    }
     
-    
-    
-    return string
+    return reversedString;
     //   +=====================================================+
     //   |                 WRITE YOUR CODE HERE                |
     //   | Description:                                        |
