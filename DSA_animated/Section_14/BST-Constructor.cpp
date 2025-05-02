@@ -16,8 +16,7 @@ class BinarySearchTree { // Can be created to be empty to add the first node wit
         Node* root;
 
     public:
-        BinarySearchTree(int value){
-            Node* newNode = new Node(value);
-            root = newNode;
+        BinarySearchTree(){
+            root = nullptr;
         }
 };
