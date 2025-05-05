@@ -72,11 +72,12 @@ int main(){
     myBST->insert(21);
     myBST->insert(76);
     myBST->insert(18);
+    myBST->insert(27);
     myBST->insert(52);
     myBST->insert(82);
 
-    myBST->insert(27);
-
     // std::cout << "Root: " << myBST->root;
-    std::cout << myBST->root->left->right->value << std::endl;
+    // std::cout << myBST->root->left->right->value << std::endl;
+    std::cout << "Contains 27: " << myBST->contains(27) << std::endl;
+    std::cout << "Contains 17: " << myBST->contains(17);
 }
