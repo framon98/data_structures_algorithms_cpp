@@ -52,5 +52,15 @@ class BinarySearchTree { // Can be created to be empty to add the first node wit
 int main(){
     BinarySearchTree* myBST = new BinarySearchTree();
 
-    std::cout << "Root: " << myBST->root;
+    myBST->insert(47);
+    myBST->insert(21);
+    myBST->insert(76);
+    myBST->insert(18);
+    myBST->insert(52);
+    myBST->insert(82);
+
+    myBST->insert(27);
+
+    // std::cout << "Root: " << myBST->root;
+    std::cout << myBST->root->left->right->value << std::endl;
 }
