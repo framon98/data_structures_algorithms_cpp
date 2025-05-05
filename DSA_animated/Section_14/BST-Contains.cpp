@@ -47,6 +47,23 @@ class BinarySearchTree { // Can be created to be empty to add the first node wit
                 }
             }
         }
+
+        bool contains (int value){
+            if (root == nullptr) return false;
+            Node* temp = root;
+
+            while (temp){
+                if (value < temp->value){
+                    temp = temp->left;
+                }else if (value > temp->value){
+                    temp = temp->right;
+                }else{
+                    return true;
+                }
+                return false;
+            }
+
+        }
 };
 
 int main(){
