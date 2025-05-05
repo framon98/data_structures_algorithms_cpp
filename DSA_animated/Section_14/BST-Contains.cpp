@@ -49,9 +49,8 @@ class BinarySearchTree { // Can be created to be empty to add the first node wit
         }
 
         bool contains (int value){
-            if (root == nullptr) return false;
-            Node* temp = root;
-
+            // if (root == nullptr) return false; // This might not be needed
+            Node* temp = root; // Only using this yields cleaner code
             while (temp){
                 if (value < temp->value){
                     temp = temp->left;
@@ -60,8 +59,8 @@ class BinarySearchTree { // Can be created to be empty to add the first node wit
                 }else{
                     return true;
                 }
-                return false;
             }
+            return false;
 
         }
 };
