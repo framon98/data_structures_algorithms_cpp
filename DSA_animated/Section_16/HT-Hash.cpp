@@ -33,6 +33,15 @@ class HashTable {
                 }
             }
         }
+
+        int hash(std::string key){
+            int hash = 0;
+            for (int idx = 0; idx < key.length(); idx++){
+                int asciiValue = int(key[idx]); // this turns strings into their ascii equivalents
+                hash = (hash + asciiValue * 23) % SIZE; //this allows the results to be more random
+            }
+            return hash;
+        }
 };
 
 
