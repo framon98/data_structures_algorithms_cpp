@@ -33,11 +33,39 @@ class HashTable {
                 }
             }
         }
+        int hash(std::string key){
+            int hash = 0;
+            for (int idx = 0; idx < key.length(); idx++){
+                int asciiValue = int(key[idx]); // this turns strings into their ascii equivalents
+                hash = (hash + asciiValue * 23) % SIZE; //this allows the results to be more random
+            }
+            return hash;
+        }
+
+        void set(std::string key, int value){
+            int index = hash(key);
+            Node* newNode = new Node(key, value);
+            if (dataMap[index] == nullptr) { // No nodes at this address
+                dataMap[index] = newNode;
+            }else{ // There are nodes in the address already
+                Node* temp = dataMap[index];
+                while (temp->next != nullptr){
+                    temp = temp->next;
+                }
+                temp->next = newNode;
+            }
+        }
 };
 
 
 int main(){
     HashTable* myHashTable = new HashTable();
+
+    myHashTable->set("nails", 100);
+    myHashTable->set("tile", 50);
+    myHashTable->set("lumber", 80);
+    myHashTable->set("bolts", 200);
+    myHashTable->set("screws", 140);
 
     myHashTable->printTable();
 }
