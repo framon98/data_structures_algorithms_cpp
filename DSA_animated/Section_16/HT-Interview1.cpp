@@ -18,7 +18,7 @@ bool itemInCommon(std::vector<int> vect1, std::vector<int> vect2){
 
 int main(){
     std::vector<int> vect1 {1, 3, 5};
-    std::vector<int> vect2 {2, 4, 5};
+    std::vector<int> vect2 {2, 4, 6};
 
     std::cout << itemInCommon(vect1, vect2);
 }
