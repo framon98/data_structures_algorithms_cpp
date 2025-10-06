@@ -55,6 +55,19 @@ class HashTable {
                 temp->next = newNode;
             }
         }
+        
+        int get(std::string key){
+            int index = hash(key);
+            Node* temp = dataMap[index];
+            while (temp != nullptr){
+                if (temp->key == key){
+                    return temp->value;
+                }
+                temp = temp->next;
+            }
+            return 0;
+        }
+
 };
 
 
