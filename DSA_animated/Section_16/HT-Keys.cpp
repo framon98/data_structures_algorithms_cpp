@@ -88,15 +88,22 @@ class HashTable {
 int main(){
     HashTable* myHashTable = new HashTable();
 
+    myHashTable->set("paint", 20);
+    myHashTable->set("bolts", 40);
     myHashTable->set("nails", 100);
     myHashTable->set("tile", 50);
     myHashTable->set("lumber", 80);
 
+    std::vector<std::string> myKeys = myHashTable->keys();
+
+    for (auto key : myKeys) {
+        std::cout << key << " ";
+    }
 
     // myHashTable->set("bolts", 200);
     // myHashTable->set("screws", 140);
 
-    std::cout << "Lumber: " << myHashTable->get("lumber") << std::endl;
-    std::cout << "Bolts: " << myHashTable->get("bolts") << std::endl;
+    // std::cout << "Lumber: " << myHashTable->get("lumber") << std::endl;
+    // std::cout << "Bolts: " << myHashTable->get("bolts") << std::endl;
     // myHashTable->printTable();
 }
