@@ -7,6 +7,18 @@
 #include <vector>
 #include <iostream>
 
-bool itemInCommon(std::vector<int> vect1, std::vector<int> vect1){
-    
+bool itemInCommon(std::vector<int> vect1, std::vector<int> vect2){
+    for (auto idxi : vect1){
+        for (auto idxj : vect2){
+            if (idxi == idxj) return true;
+        }
+    }
+    return false;
+} // This is not an efficient approach
+
+int main(){
+    std::vector<int> vect1 {1, 3, 5};
+    std::vector<int> vect2 {2, 4, 5};
+
+    std::cout << itemInCommon(vect1, vect2);
 }
